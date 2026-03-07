@@ -1,87 +1,48 @@
-# Welcome to React Router!
+# DeployWise — Remix Template
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A production-ready Remix (React Router) starter, pre-configured for one-click deployment to your VPS with [DeployWise](https://deploywise.dev).
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## What's Included
 
-## Features
+- React Router 7 with server-side rendering
+- TypeScript and Tailwind CSS
+- Docker support included
+- Optimized for PM2 + Nginx deployment
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
+## Quick Start
 
 ```bash
 npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Open [http://localhost:5173](http://localhost:5173).
 
-## Building for Production
+## Deploy with DeployWise
 
-Create a production build:
+1. Push this repo to GitHub
+2. Open [deploywise.dev/dashboard](https://deploywise.dev/dashboard)
+3. Add your VPS → Create a project → Select this repo
+4. Click **Deploy**
 
-```bash
-npm run build
-```
+DeployWise automatically runs `react-router build`, starts with PM2, configures Nginx, and issues a free SSL certificate. Docker deployment is also supported — just keep the Dockerfile and DeployWise will auto-detect it.
 
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
+## Project Structure
 
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+├── app/
+│   ├── routes/       # Route components
+│   ├── root.tsx      # Root layout
+│   └── app.css       # Global styles
+├── Dockerfile        # Docker support
+└── package.json
 ```
 
-## Styling
+## Learn More
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+- [DeployWise Docs](https://deploywise.dev/docs)
+- [React Router Documentation](https://reactrouter.com)
 
 ---
 
-Built with ❤️ using React Router.
+Deployed with [DeployWise](https://deploywise.dev) — free, open source.
